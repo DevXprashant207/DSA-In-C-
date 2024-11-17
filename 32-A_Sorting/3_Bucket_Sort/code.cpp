@@ -14,14 +14,14 @@ void BucketSort(vector<float>& v){
         min_ele = min(min_ele,v[i]);
         max_ele = max(max_ele,v[i]);
     }
-    int range = (max_ele-min_ele)/n;
+    float range = (max_ele-min_ele)/n;
     // step 2 to insert ele into bucket acc to index
     for(int i=0; i<n; i++){
          int index  = (v[i]-min_ele)/range;
          // boundary ele
          float diff = (v[i]-min_ele)/range-index; 
          if(diff==0 && v[i]!=min_ele){
-             bucket[index-1 ].push_back(v[i]);
+             bucket[index-1].push_back(v[i]);
          }
          else{
              bucket[index].push_back(v[i]);
